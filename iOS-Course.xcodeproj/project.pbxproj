@@ -10,7 +10,6 @@
 		80EE167C1B3BD9BE00FC983F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 80EE167B1B3BD9BE00FC983F /* main.m */; };
 		80EE167F1B3BD9BE00FC983F /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 80EE167E1B3BD9BE00FC983F /* AppDelegate.m */; };
 		80EE16821B3BD9BE00FC983F /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 80EE16811B3BD9BE00FC983F /* LoginViewController.m */; };
-		80EE16851B3BD9BE00FC983F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 80EE16831B3BD9BE00FC983F /* Main.storyboard */; };
 		80EE16871B3BD9BE00FC983F /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 80EE16861B3BD9BE00FC983F /* Images.xcassets */; };
 		80EE168A1B3BD9BE00FC983F /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 80EE16881B3BD9BE00FC983F /* LaunchScreen.xib */; };
 		80EE16961B3BD9BE00FC983F /* iOS_CourseTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 80EE16951B3BD9BE00FC983F /* iOS_CourseTests.m */; };
@@ -30,6 +29,7 @@
 		80EE16BB1B3BDB8C00FC983F /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 80EE16BA1B3BDB8C00FC983F /* libz.dylib */; };
 		80EE16BD1B3BDB9900FC983F /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 80EE16BC1B3BDB9900FC983F /* libsqlite3.dylib */; };
 		80EE16C01B3BE23C00FC983F /* SignUpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 80EE16BF1B3BE23C00FC983F /* SignUpViewController.m */; };
+		80EE16C21B3C0A8400FC983F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 80EE16C11B3C0A8400FC983F /* Main.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,7 +50,6 @@
 		80EE167E1B3BD9BE00FC983F /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		80EE16801B3BD9BE00FC983F /* LoginViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
 		80EE16811B3BD9BE00FC983F /* LoginViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
-		80EE16841B3BD9BE00FC983F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		80EE16861B3BD9BE00FC983F /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		80EE16891B3BD9BE00FC983F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		80EE168F1B3BD9BE00FC983F /* iOS-CourseTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "iOS-CourseTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -73,6 +72,7 @@
 		80EE16BC1B3BDB9900FC983F /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
 		80EE16BE1B3BE23C00FC983F /* SignUpViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SignUpViewController.h; sourceTree = "<group>"; };
 		80EE16BF1B3BE23C00FC983F /* SignUpViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SignUpViewController.m; sourceTree = "<group>"; };
+		80EE16C11B3C0A8400FC983F /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -134,9 +134,9 @@
 				80EE167E1B3BD9BE00FC983F /* AppDelegate.m */,
 				80EE16801B3BD9BE00FC983F /* LoginViewController.h */,
 				80EE16811B3BD9BE00FC983F /* LoginViewController.m */,
-				80EE16831B3BD9BE00FC983F /* Main.storyboard */,
 				80EE16861B3BD9BE00FC983F /* Images.xcassets */,
 				80EE16881B3BD9BE00FC983F /* LaunchScreen.xib */,
+				80EE16C11B3C0A8400FC983F /* Main.storyboard */,
 				80EE16791B3BD9BE00FC983F /* Supporting Files */,
 				80EE16BE1B3BE23C00FC983F /* SignUpViewController.h */,
 				80EE16BF1B3BE23C00FC983F /* SignUpViewController.m */,
@@ -272,7 +272,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				80EE16851B3BD9BE00FC983F /* Main.storyboard in Resources */,
+				80EE16C21B3C0A8400FC983F /* Main.storyboard in Resources */,
 				80EE168A1B3BD9BE00FC983F /* LaunchScreen.xib in Resources */,
 				80EE16871B3BD9BE00FC983F /* Images.xcassets in Resources */,
 			);
@@ -318,14 +318,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		80EE16831B3BD9BE00FC983F /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				80EE16841B3BD9BE00FC983F /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		80EE16881B3BD9BE00FC983F /* LaunchScreen.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
