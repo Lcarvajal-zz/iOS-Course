@@ -12,7 +12,7 @@
 
 @property (nonatomic, copy) NSString* name;
 @property (nonatomic, copy) NSString* email;
-@property (nonatomic, copy) NSArray* hobbies;
+@property (nonatomic, copy) NSString* hobbies;
 @property (nonatomic, copy) NSString* about;
 
 @end
