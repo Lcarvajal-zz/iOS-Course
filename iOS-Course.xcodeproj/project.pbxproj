@@ -30,6 +30,9 @@
 		80EE16BD1B3BDB9900FC983F /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 80EE16BC1B3BDB9900FC983F /* libsqlite3.dylib */; };
 		80EE16C01B3BE23C00FC983F /* SignUpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 80EE16BF1B3BE23C00FC983F /* SignUpViewController.m */; };
 		80EE16C21B3C0A8400FC983F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 80EE16C11B3C0A8400FC983F /* Main.storyboard */; };
+		80EE16C81B3C166D00FC983F /* FeedTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 80EE16C71B3C166D00FC983F /* FeedTableViewController.m */; };
+		80EE16CB1B3C1A7300FC983F /* ClassmatesTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 80EE16CA1B3C1A7300FC983F /* ClassmatesTableViewController.m */; };
+		80EE16CF1B3C1C0D00FC983F /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = 80EE16CE1B3C1C0D00FC983F /* User.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -73,6 +76,12 @@
 		80EE16BE1B3BE23C00FC983F /* SignUpViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SignUpViewController.h; sourceTree = "<group>"; };
 		80EE16BF1B3BE23C00FC983F /* SignUpViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SignUpViewController.m; sourceTree = "<group>"; };
 		80EE16C11B3C0A8400FC983F /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		80EE16C61B3C166D00FC983F /* FeedTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FeedTableViewController.h; sourceTree = "<group>"; };
+		80EE16C71B3C166D00FC983F /* FeedTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FeedTableViewController.m; sourceTree = "<group>"; };
+		80EE16C91B3C1A7300FC983F /* ClassmatesTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ClassmatesTableViewController.h; sourceTree = "<group>"; };
+		80EE16CA1B3C1A7300FC983F /* ClassmatesTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ClassmatesTableViewController.m; sourceTree = "<group>"; };
+		80EE16CD1B3C1C0D00FC983F /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = User.h; sourceTree = "<group>"; };
+		80EE16CE1B3C1C0D00FC983F /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -130,6 +139,7 @@
 		80EE16781B3BD9BE00FC983F /* iOS-Course */ = {
 			isa = PBXGroup;
 			children = (
+				80EE16CC1B3C1BDC00FC983F /* Model */,
 				80EE167D1B3BD9BE00FC983F /* AppDelegate.h */,
 				80EE167E1B3BD9BE00FC983F /* AppDelegate.m */,
 				80EE16801B3BD9BE00FC983F /* LoginViewController.h */,
@@ -140,6 +150,10 @@
 				80EE16791B3BD9BE00FC983F /* Supporting Files */,
 				80EE16BE1B3BE23C00FC983F /* SignUpViewController.h */,
 				80EE16BF1B3BE23C00FC983F /* SignUpViewController.m */,
+				80EE16C61B3C166D00FC983F /* FeedTableViewController.h */,
+				80EE16C71B3C166D00FC983F /* FeedTableViewController.m */,
+				80EE16C91B3C1A7300FC983F /* ClassmatesTableViewController.h */,
+				80EE16CA1B3C1A7300FC983F /* ClassmatesTableViewController.m */,
 			);
 			path = "iOS-Course";
 			sourceTree = "<group>";
@@ -190,6 +204,15 @@
 				80EE16A01B3BDACA00FC983F /* Bolts.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		80EE16CC1B3C1BDC00FC983F /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				80EE16CD1B3C1C0D00FC983F /* User.h */,
+				80EE16CE1B3C1C0D00FC983F /* User.m */,
+			);
+			name = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -293,9 +316,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				80EE16821B3BD9BE00FC983F /* LoginViewController.m in Sources */,
+				80EE16CF1B3C1C0D00FC983F /* User.m in Sources */,
 				80EE167F1B3BD9BE00FC983F /* AppDelegate.m in Sources */,
 				80EE16C01B3BE23C00FC983F /* SignUpViewController.m in Sources */,
+				80EE16CB1B3C1A7300FC983F /* ClassmatesTableViewController.m in Sources */,
 				80EE167C1B3BD9BE00FC983F /* main.m in Sources */,
+				80EE16C81B3C166D00FC983F /* FeedTableViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

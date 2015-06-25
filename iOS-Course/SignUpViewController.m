@@ -17,8 +17,9 @@
 @property (weak, nonatomic) IBOutlet UITextField *passwordTF;
 
 
-@property (weak, nonatomic) IBOutlet UIButton *signUpButton;
-@property (weak, nonatomic) IBOutlet UIButton *cancelButton;
+- (IBAction)signUp:(id)sender;
+- (IBAction)cancelSignUp:(id)sender;
+
 
 @end
 
@@ -27,11 +28,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    
-    [self.signUpButton addTarget:self action:@selector(signUp)
-            forControlEvents:UIControlEventTouchUpInside];
-    [self.cancelButton addTarget:self action:@selector(cancelSignUp)
-            forControlEvents:UIControlEventTouchUpInside];
+
 }
 
 - (void)didReceiveMemoryWarning {
@@ -41,7 +38,7 @@
 
 // SIGN UP AND CANCEL BUTTON ACTIONS
 
-- (void)signUp {
+- (IBAction)signUp:(id)sender {
     NSString* name = [self.firstNameTF.text stringByAppendingString:@" "];
     name = [name stringByAppendingString:self.lastNameTF.text];
     name = [name lowercaseString];
@@ -100,7 +97,7 @@
     
 }
 
-- (void)cancelSignUp {
+- (IBAction)cancelSignUp:(id)sender {
     
     // go to previous view
     [self dismissViewControllerAnimated:YES completion:nil];

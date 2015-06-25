@@ -22,7 +22,7 @@
                                 <rect key="frame" x="35" y="363" width="250" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="dzT-BI-ZmE">
                                 <rect key="frame" x="168" y="401" width="117" height="33"/>
@@ -58,12 +58,117 @@
                     <connections>
                         <outlet property="emailTF" destination="pU6-Cf-hIi" id="ol2-Gf-BAm"/>
                         <outlet property="passwordTF" destination="GR9-NB-Mvh" id="15p-ir-s9W"/>
-                        <segue destination="VLA-DK-ALI" kind="push" identifier="loginSegue" id="0tz-yo-atf"/>
+                        <segue destination="G5S-Q7-bCg" kind="push" identifier="loginSegue" id="MdV-0Y-5Em"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="611" y="333"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="wni-Eb-B7I">
+            <objects>
+                <tabBarController id="G5S-Q7-bCg" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="932-oC-Tzh"/>
+                    <nil key="simulatedBottomBarMetrics"/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" id="O9e-sX-Clf">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="JA1-vc-cVR" kind="relationship" relationship="viewControllers" id="URo-kD-IVL"/>
+                        <segue destination="uRw-dt-d3O" kind="relationship" relationship="viewControllers" id="7ny-rz-gYD"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Fbf-Wv-Ydd" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1019" y="333"/>
+        </scene>
+        <!--Classmates-->
+        <scene sceneID="2YQ-s9-mS1">
+            <objects>
+                <tableViewController title="Classmates" id="uRw-dt-d3O" customClass="ClassmatesTableViewController" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="x0N-gr-aB5">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="separatorColor" red="0.80784313730000001" green="0.72156862749999995" blue="0.53333333329999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="sectionIndexBackgroundColor" red="0.80784313730000001" green="0.72156862749999995" blue="0.53333333329999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" textLabel="VpA-yp-tst" style="IBUITableViewCellStyleDefault" id="Lb9-VG-kXN">
+                                <rect key="frame" x="0.0" y="86" width="320" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Lb9-VG-kXN" id="XKz-6d-vuO">
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="VpA-yp-tst">
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                            <color key="textColor" red="0.47058823529999999" green="0.1843137255" blue="0.25098039220000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </tableViewCellContentView>
+                                <color key="tintColor" red="0.39215686274509803" green="0.12549019607843137" blue="0.19215686274509805" alpha="1" colorSpace="calibratedRGB"/>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="uRw-dt-d3O" id="988-Um-gzN"/>
+                            <outlet property="delegate" destination="uRw-dt-d3O" id="k5V-bo-nH1"/>
+                        </connections>
+                    </tableView>
+                    <tabBarItem key="tabBarItem" title="Classmates" image="classmates" id="ZCO-Uk-7yz"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="lSn-m5-w7k" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1525" y="665"/>
+        </scene>
+        <!--Class Feed-->
+        <scene sceneID="hap-B8-Qw2">
+            <objects>
+                <tableViewController title="Class Feed" id="JA1-vc-cVR" customClass="FeedTableViewController" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="65" sectionHeaderHeight="22" sectionFooterHeight="22" id="meE-Ix-1Lc">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="separatorColor" red="0.80784313730000001" green="0.72156862749999995" blue="0.53333333329999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="sectionIndexBackgroundColor" red="0.80784313730000001" green="0.72156862749999995" blue="0.53333333329999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" textLabel="ggU-g1-ZYU" detailTextLabel="OV6-C1-W79" rowHeight="65" style="IBUITableViewCellStyleSubtitle" id="8VK-Md-Vjf">
+                                <rect key="frame" x="0.0" y="86" width="320" height="65"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="8VK-Md-Vjf" id="TzL-Kc-D09">
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="64"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="ggU-g1-ZYU">
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Subtitle" lineBreakMode="wordWrap" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="OV6-C1-W79">
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                                            <color key="textColor" red="0.47058823529999999" green="0.1843137255" blue="0.25098039220000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="JA1-vc-cVR" id="qJl-9j-B55"/>
+                            <outlet property="delegate" destination="JA1-vc-cVR" id="t1c-CX-7wl"/>
+                        </connections>
+                    </tableView>
+                    <tabBarItem key="tabBarItem" title="Class Feed" image="feed" id="oqD-vT-wym"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="EaJ-oy-NIT" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1525" y="22"/>
         </scene>
         <!--Sign Up View Controller-->
         <scene sceneID="aQE-EQ-QqC">
@@ -103,6 +208,9 @@
                                 <state key="normal" title="Sign up!">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="signUp:" destination="WAi-rl-Cht" eventType="touchUpInside" id="2Be-wt-wTY"/>
+                                </connections>
                             </button>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" minimumFontSize="17" id="WgB-rG-Egf">
                                 <rect key="frame" x="35" y="351" width="250" height="30"/>
@@ -118,6 +226,9 @@
                                 <state key="normal" title="Cancel">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="cancelSignUp:" destination="WAi-rl-Cht" eventType="touchUpInside" id="uRS-xN-xhE"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="0.47058823529999999" green="0.1843137255" blue="0.25098039220000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -126,41 +237,15 @@
                         <barButtonItem key="backBarButtonItem" title="Cancel" id="fAs-Qw-DEl"/>
                     </navigationItem>
                     <connections>
-                        <outlet property="cancelButton" destination="4fi-UH-sxs" id="X26-KH-q7U"/>
                         <outlet property="emailTF" destination="iAS-4Q-qIi" id="c4J-5G-YlZ"/>
                         <outlet property="firstNameTF" destination="ldO-1v-t9p" id="gFg-Mk-6vs"/>
                         <outlet property="lastNameTF" destination="8dg-gG-a6U" id="AkY-sx-z3e"/>
                         <outlet property="passwordTF" destination="WgB-rG-Egf" id="Wlt-ia-3br"/>
-                        <outlet property="signUpButton" destination="v8X-Yf-NKB" id="eOA-yY-xY1"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rF0-pM-2aC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="611" y="1012"/>
-        </scene>
-        <!--View Controller-->
-        <scene sceneID="a1l-ky-W3f">
-            <objects>
-                <viewController id="VLA-DK-ALI" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="z2D-yP-du7">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Login Success!" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="zqz-r2-M9L">
-                                <rect key="frame" x="101" y="273" width="118" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                    <navigationItem key="navigationItem" id="lMe-7X-lgO"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="NpK-Md-41w" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1047" y="333"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="pdy-Up-3W2">
@@ -184,10 +269,13 @@
     <resources>
         <image name="FSU-initials" width="220" height="240"/>
         <image name="FSU-seal" width="169" height="169"/>
+        <image name="classmates" width="25" height="25"/>
+        <image name="feed" width="25" height="25"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
+    <color key="tintColor" red="0.47058823529999999" green="0.1843137255" blue="0.25098039220000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
 </document>
