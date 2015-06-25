@@ -19,8 +19,15 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    // fix navigation header
+    if ([self respondsToSelector:@selector(edgesForExtendedLayout)])
+        self.edgesForExtendedLayout = UIRectEdgeNone;
+    
+    // initialize arrays
     if (!_classmates)
-        _classmates = [[NSMutableArray alloc] init];
+        _classmates = [[NSArray alloc] init];
+    if(!_users)
+        _users = [[NSMutableArray alloc] init];
     
     [self getClassmates];
     
@@ -38,29 +45,23 @@
 
 - (void)getClassmates {
     
-    PFQuery *query = [PFQuery queryWithClassName:@"Name"];  // pull out all student names
-    [query orderByDescending:@"Name"];                      // alphabetize
+    // perform query for classmates info
+    PFQuery *query = [PFUser query];
+    self.classmates = [query findObjects];
     
-    [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
-        //3
-        if (!error) {
-            //Everything was correct, put the new objects and load the wall
-            self.classmates = nil;
-            self.classmates = [[NSMutableArray alloc] initWithArray:objects];
-            
-            User* user = self.classmates[0];
-            if(user)
-                NSLog(user.name);
-            
-        } else {
-            
-            //4
-            NSString *errorString = [[error userInfo] objectForKey:@"error"];
-            UIAlertView *errorAlertView = [[UIAlertView alloc] initWithTitle:@"Error" message:errorString delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles:nil, nil];
-            [errorAlertView show];
-        }
-    }];
+    for (int i = 0; i < self.classmates.count; i++) {
+        
+        // individual user info
+        User* user = [[User alloc] init];
+        user.name = [[self.classmates objectAtIndex:i] objectForKey:@"Name"];
+        user.email = [[self.classmates objectAtIndex:i] email];
+        user.hobbies = [[self.classmates objectAtIndex:i] objectForKey:@"hobbies"];
+        user.about = [[self.classmates objectAtIndex:i] objectForKey:@"about"];
+        
+        [self.users addObject:user ];
+    }
     
+    [self.tableView reloadData];
 }
 
 #pragma mark - Table view data source
@@ -72,7 +73,7 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     // Return the number of rows in the section.
-    return self.classmates.count;
+    return self.users.count;
 }
 
 
@@ -87,9 +88,8 @@
     }
     
     // set names for classmates list
-    User* user = [self.classmates objectAtIndex:indexPath.row];
-    cell.textLabel.text = user.name;
-    
+    User* classmate = [self.users objectAtIndex:indexPath.row];
+    cell.textLabel.text = classmate.name;
     
     return cell;
 }

@@ -10,6 +10,7 @@
 
 @interface ClassmatesTableViewController : UITableViewController
 
-@property NSMutableArray* classmates;
+@property NSArray* classmates;
+@property NSMutableArray* users;
 
 @end
