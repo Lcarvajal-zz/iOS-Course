@@ -8,6 +8,7 @@
 
 #import "ClassmatesTableViewController.h"
 #import "User.h"
+#import "Users.h"
 #import <Parse/Parse.h>
 
 @interface ClassmatesTableViewController ()
@@ -23,13 +24,10 @@
     if ([self respondsToSelector:@selector(edgesForExtendedLayout)])
         self.edgesForExtendedLayout = UIRectEdgeNone;
     
-    // initialize arrays
-    if (!_classmates)
-        _classmates = [[NSArray alloc] init];
-    if(!_users)
-        _users = [[NSMutableArray alloc] init];
+    if (!_users)
+        _users = [[Users alloc] init];
     
-    [self getClassmates];
+    
     
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
@@ -43,27 +41,6 @@
     // Dispose of any resources that can be recreated.
 }
 
-- (void)getClassmates {
-    
-    // perform query for classmates info
-    PFQuery *query = [PFUser query];
-    self.classmates = [query findObjects];
-    
-    for (int i = 0; i < self.classmates.count; i++) {
-        
-        // individual user info
-        User* user = [[User alloc] init];
-        user.name = [[self.classmates objectAtIndex:i] objectForKey:@"Name"];
-        user.email = [[self.classmates objectAtIndex:i] email];
-        user.hobbies = [[self.classmates objectAtIndex:i] objectForKey:@"hobbies"];
-        user.about = [[self.classmates objectAtIndex:i] objectForKey:@"about"];
-        
-        [self.users addObject:user ];
-    }
-    
-    [self.tableView reloadData];
-}
-
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
@@ -73,7 +50,7 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     // Return the number of rows in the section.
-    return self.users.count;
+    return [self.users userCount];
 }
 
 
@@ -88,7 +65,7 @@
     }
     
     // set names for classmates list
-    User* classmate = [self.users objectAtIndex:indexPath.row];
+    User* classmate = [self.users getUser:(int)indexPath.row];
     cell.textLabel.text = classmate.name;
     
     return cell;

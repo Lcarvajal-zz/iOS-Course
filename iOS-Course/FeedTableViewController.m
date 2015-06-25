@@ -17,7 +17,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.navigationController.navigationItem.hidesBackButton = YES;
+    self.navigationController.navigationBar.hidden = YES;
     [[UITabBar appearance] setTintColor:[UIColor colorWithRed: 100.0/255.0f green:32.0/255.0f blue:49.0/255.0f alpha:1.0]];
     
     // Uncomment the following line to preserve selection between presentations.

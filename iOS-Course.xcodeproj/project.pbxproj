@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		80B0B9AE1B3C4B270018CBAF /* EditProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 80B0B9AD1B3C4B270018CBAF /* EditProfileViewController.m */; };
+		80B0B9B11B3C4D5C0018CBAF /* Users.m in Sources */ = {isa = PBXBuildFile; fileRef = 80B0B9B01B3C4D5C0018CBAF /* Users.m */; };
 		80EE167C1B3BD9BE00FC983F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 80EE167B1B3BD9BE00FC983F /* main.m */; };
 		80EE167F1B3BD9BE00FC983F /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 80EE167E1B3BD9BE00FC983F /* AppDelegate.m */; };
 		80EE16821B3BD9BE00FC983F /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 80EE16811B3BD9BE00FC983F /* LoginViewController.m */; };
@@ -46,6 +48,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		80B0B9AC1B3C4B270018CBAF /* EditProfileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EditProfileViewController.h; sourceTree = "<group>"; };
+		80B0B9AD1B3C4B270018CBAF /* EditProfileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EditProfileViewController.m; sourceTree = "<group>"; };
+		80B0B9AF1B3C4D5C0018CBAF /* Users.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Users.h; sourceTree = "<group>"; };
+		80B0B9B01B3C4D5C0018CBAF /* Users.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Users.m; sourceTree = "<group>"; };
 		80EE16761B3BD9BE00FC983F /* iOS-Course.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "iOS-Course.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		80EE167A1B3BD9BE00FC983F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		80EE167B1B3BD9BE00FC983F /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -154,6 +160,8 @@
 				80EE16C71B3C166D00FC983F /* FeedTableViewController.m */,
 				80EE16C91B3C1A7300FC983F /* ClassmatesTableViewController.h */,
 				80EE16CA1B3C1A7300FC983F /* ClassmatesTableViewController.m */,
+				80B0B9AC1B3C4B270018CBAF /* EditProfileViewController.h */,
+				80B0B9AD1B3C4B270018CBAF /* EditProfileViewController.m */,
 			);
 			path = "iOS-Course";
 			sourceTree = "<group>";
@@ -211,6 +219,8 @@
 			children = (
 				80EE16CD1B3C1C0D00FC983F /* User.h */,
 				80EE16CE1B3C1C0D00FC983F /* User.m */,
+				80B0B9AF1B3C4D5C0018CBAF /* Users.h */,
+				80B0B9B01B3C4D5C0018CBAF /* Users.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -315,10 +325,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				80B0B9B11B3C4D5C0018CBAF /* Users.m in Sources */,
 				80EE16821B3BD9BE00FC983F /* LoginViewController.m in Sources */,
 				80EE16CF1B3C1C0D00FC983F /* User.m in Sources */,
 				80EE167F1B3BD9BE00FC983F /* AppDelegate.m in Sources */,
 				80EE16C01B3BE23C00FC983F /* SignUpViewController.m in Sources */,
+				80B0B9AE1B3C4B270018CBAF /* EditProfileViewController.m in Sources */,
 				80EE16CB1B3C1A7300FC983F /* ClassmatesTableViewController.m in Sources */,
 				80EE167C1B3BD9BE00FC983F /* main.m in Sources */,
 				80EE16C81B3C166D00FC983F /* FeedTableViewController.m in Sources */,
@@ -516,6 +528,7 @@
 				80EE169B1B3BD9BE00FC983F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		80EE169C1B3BD9BE00FC983F /* Build configuration list for PBXNativeTarget "iOS-CourseTests" */ = {
 			isa = XCConfigurationList;
@@ -524,6 +537,7 @@
 				80EE169E1B3BD9BE00FC983F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

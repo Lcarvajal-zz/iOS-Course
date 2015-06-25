@@ -1,5 +1,5 @@
 //
-//  ClassmatesTableViewController.h
+//  EditProfileViewController.h
 //  iOS-Course
 //
 //  Created by Lukas Carvajal on 6/25/15.
@@ -7,10 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "Users.h"
+#import <Parse/Parse.h>
+#import "User.h"
 
-@interface ClassmatesTableViewController : UITableViewController
+@interface EditProfileViewController : UIViewController
 
-@property Users* users;
+@property User* currentUser;
 
 @end

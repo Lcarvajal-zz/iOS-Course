@@ -80,6 +80,9 @@
     user.email = email;
     user.password = password;
     [user setObject:name forKey:@"Name"];
+    [user setObject:@" " forKey:@"website"];
+    [user setObject:@" " forKey:@"hobbies"];
+    [user setObject:@" " forKey:@"about"];
     
     [user signUpInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
         if(!error) {
