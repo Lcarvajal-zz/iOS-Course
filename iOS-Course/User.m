@@ -22,23 +22,35 @@
 
 - (void) setCurrentUser {
     
-    PFFile *userImageFile = [[PFUser currentUser] objectForKey:@"profilePic"];
-    
-    [userImageFile getDataInBackgroundWithBlock:^(NSData *imageData, NSError *error) {
-        if (!error) {
-            self.profilePic = [UIImage imageWithData:imageData];
-        }
-        else {
-            NSLog(@"fiddlesticks");
-        }
-    }];
-    
     self.name = [[PFUser currentUser] objectForKey:@"Name"];
     self.username = [[PFUser currentUser] username];
     self.email = [[PFUser currentUser] email];
     self.website = [[PFUser currentUser] objectForKey:@"website"];
     self.hobbies = [[PFUser currentUser] objectForKey:@"hobbies"];
     self.about = [[PFUser currentUser] objectForKey:@"about"];
+}
+
+- (void) loadProfilePicture {
+
+    PFQuery *query = [PFQuery queryWithClassName:@"Name"];
+    [query getObjectInBackgroundWithId:self.name
+                                 block:^(PFObject *user, NSError *error) {
+                                     {
+                                         // do your thing with text
+                                         if (!error) {
+                                             PFFile *userImageFile = [user objectForKey:@"profilePic"];
+                                             
+                                             [userImageFile getDataInBackgroundWithBlock:^(NSData *imageData, NSError *error) {
+                                                 if (!error) {
+                                                     self.profilePic = [UIImage imageWithData:imageData];
+                                                 }
+                                                 else {
+                                                     NSLog(@"profile photo not found!");
+                                                 }
+                                             }];
+                                         }
+                                     }
+                                 }];
 }
 
 @end

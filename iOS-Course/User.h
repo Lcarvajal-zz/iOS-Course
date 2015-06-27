@@ -24,5 +24,6 @@
 @property (nonatomic, copy) NSString* about;
 
 - (void) setCurrentUser;    // turn user into currently logged in user
+- (void) loadProfilePicture;
 
 @end

@@ -7,7 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Feed.h"
+#import "FeedPost.h"
 
 @interface FeedTableViewController : UITableViewController
+
+@property Feed* feed;
+@property FeedPost* feedPost;
 
 @end

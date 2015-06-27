@@ -34,6 +34,9 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    // hide navigation bar
+    self.navigationController.navigationBar.hidden = YES;
+    
     if (!_currentUser)
         _currentUser = [[User alloc] init];
     
@@ -65,7 +68,7 @@
             self.picIV.image = [UIImage imageWithData:imageData];
         }
         else {
-            NSLog(@"fiddlesticks");
+            NSLog(@"profile photo not found!");
         }
     }];
     self.nameTF.text = self.currentUser.name;

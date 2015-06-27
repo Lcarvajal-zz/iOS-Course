@@ -12,5 +12,6 @@
 @interface ClassmatesTableViewController : UITableViewController
 
 @property Users* users;
+@property User* viewUser;
 
 @end

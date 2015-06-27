@@ -104,7 +104,7 @@
     
     // go to previous view
     [self dismissViewControllerAnimated:YES completion:nil];
-    // [self.navigationController popViewControllerAnimated:YES];
+
 }
 
 // ALERT USER

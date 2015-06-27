@@ -7,8 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8059BD4F1B3E8F9300A029D1 /* CreatePostViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8059BD4E1B3E8F9300A029D1 /* CreatePostViewController.m */; };
+		8059BD521B3E9B2400A029D1 /* ViewPostViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8059BD511B3E9B2400A029D1 /* ViewPostViewController.m */; };
+		8059BD551B3E9BF000A029D1 /* FeedPost.m in Sources */ = {isa = PBXBuildFile; fileRef = 8059BD541B3E9BF000A029D1 /* FeedPost.m */; };
+		8059BD581B3EA19800A029D1 /* Feed.m in Sources */ = {isa = PBXBuildFile; fileRef = 8059BD571B3EA19800A029D1 /* Feed.m */; };
 		80B0B9AE1B3C4B270018CBAF /* EditProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 80B0B9AD1B3C4B270018CBAF /* EditProfileViewController.m */; };
 		80B0B9B11B3C4D5C0018CBAF /* Users.m in Sources */ = {isa = PBXBuildFile; fileRef = 80B0B9B01B3C4D5C0018CBAF /* Users.m */; };
+		80B0B9B91B3E67500018CBAF /* ViewProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 80B0B9B81B3E67500018CBAF /* ViewProfileViewController.m */; };
+		80B0B9C31B3E6AC60018CBAF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 80B0B9C21B3E6AC60018CBAF /* Main.storyboard */; };
 		80EE167C1B3BD9BE00FC983F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 80EE167B1B3BD9BE00FC983F /* main.m */; };
 		80EE167F1B3BD9BE00FC983F /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 80EE167E1B3BD9BE00FC983F /* AppDelegate.m */; };
 		80EE16821B3BD9BE00FC983F /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 80EE16811B3BD9BE00FC983F /* LoginViewController.m */; };
@@ -31,7 +37,6 @@
 		80EE16BB1B3BDB8C00FC983F /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 80EE16BA1B3BDB8C00FC983F /* libz.dylib */; };
 		80EE16BD1B3BDB9900FC983F /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 80EE16BC1B3BDB9900FC983F /* libsqlite3.dylib */; };
 		80EE16C01B3BE23C00FC983F /* SignUpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 80EE16BF1B3BE23C00FC983F /* SignUpViewController.m */; };
-		80EE16C21B3C0A8400FC983F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 80EE16C11B3C0A8400FC983F /* Main.storyboard */; };
 		80EE16C81B3C166D00FC983F /* FeedTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 80EE16C71B3C166D00FC983F /* FeedTableViewController.m */; };
 		80EE16CB1B3C1A7300FC983F /* ClassmatesTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 80EE16CA1B3C1A7300FC983F /* ClassmatesTableViewController.m */; };
 		80EE16CF1B3C1C0D00FC983F /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = 80EE16CE1B3C1C0D00FC983F /* User.m */; };
@@ -48,10 +53,21 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		8059BD4D1B3E8F9300A029D1 /* CreatePostViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CreatePostViewController.h; sourceTree = "<group>"; };
+		8059BD4E1B3E8F9300A029D1 /* CreatePostViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CreatePostViewController.m; sourceTree = "<group>"; };
+		8059BD501B3E9B2400A029D1 /* ViewPostViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewPostViewController.h; sourceTree = "<group>"; };
+		8059BD511B3E9B2400A029D1 /* ViewPostViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewPostViewController.m; sourceTree = "<group>"; };
+		8059BD531B3E9BF000A029D1 /* FeedPost.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FeedPost.h; sourceTree = "<group>"; };
+		8059BD541B3E9BF000A029D1 /* FeedPost.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FeedPost.m; sourceTree = "<group>"; };
+		8059BD561B3EA19800A029D1 /* Feed.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Feed.h; sourceTree = "<group>"; };
+		8059BD571B3EA19800A029D1 /* Feed.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Feed.m; sourceTree = "<group>"; };
 		80B0B9AC1B3C4B270018CBAF /* EditProfileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EditProfileViewController.h; sourceTree = "<group>"; };
 		80B0B9AD1B3C4B270018CBAF /* EditProfileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EditProfileViewController.m; sourceTree = "<group>"; };
 		80B0B9AF1B3C4D5C0018CBAF /* Users.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Users.h; sourceTree = "<group>"; };
 		80B0B9B01B3C4D5C0018CBAF /* Users.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Users.m; sourceTree = "<group>"; };
+		80B0B9B71B3E67500018CBAF /* ViewProfileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewProfileViewController.h; sourceTree = "<group>"; };
+		80B0B9B81B3E67500018CBAF /* ViewProfileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewProfileViewController.m; sourceTree = "<group>"; };
+		80B0B9C21B3E6AC60018CBAF /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		80EE16761B3BD9BE00FC983F /* iOS-Course.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "iOS-Course.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		80EE167A1B3BD9BE00FC983F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		80EE167B1B3BD9BE00FC983F /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -81,7 +97,6 @@
 		80EE16BC1B3BDB9900FC983F /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
 		80EE16BE1B3BE23C00FC983F /* SignUpViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SignUpViewController.h; sourceTree = "<group>"; };
 		80EE16BF1B3BE23C00FC983F /* SignUpViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SignUpViewController.m; sourceTree = "<group>"; };
-		80EE16C11B3C0A8400FC983F /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		80EE16C61B3C166D00FC983F /* FeedTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FeedTableViewController.h; sourceTree = "<group>"; };
 		80EE16C71B3C166D00FC983F /* FeedTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FeedTableViewController.m; sourceTree = "<group>"; };
 		80EE16C91B3C1A7300FC983F /* ClassmatesTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ClassmatesTableViewController.h; sourceTree = "<group>"; };
@@ -123,6 +138,36 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		80B0B9B51B3E666E0018CBAF /* Account-Views */ = {
+			isa = PBXGroup;
+			children = (
+				80EE16801B3BD9BE00FC983F /* LoginViewController.h */,
+				80EE16811B3BD9BE00FC983F /* LoginViewController.m */,
+				80EE16BE1B3BE23C00FC983F /* SignUpViewController.h */,
+				80EE16BF1B3BE23C00FC983F /* SignUpViewController.m */,
+			);
+			name = "Account-Views";
+			sourceTree = "<group>";
+		};
+		80B0B9B61B3E66C20018CBAF /* Tab-Views */ = {
+			isa = PBXGroup;
+			children = (
+				80EE16C61B3C166D00FC983F /* FeedTableViewController.h */,
+				80EE16C71B3C166D00FC983F /* FeedTableViewController.m */,
+				8059BD4D1B3E8F9300A029D1 /* CreatePostViewController.h */,
+				8059BD4E1B3E8F9300A029D1 /* CreatePostViewController.m */,
+				8059BD501B3E9B2400A029D1 /* ViewPostViewController.h */,
+				8059BD511B3E9B2400A029D1 /* ViewPostViewController.m */,
+				80EE16C91B3C1A7300FC983F /* ClassmatesTableViewController.h */,
+				80EE16CA1B3C1A7300FC983F /* ClassmatesTableViewController.m */,
+				80B0B9B71B3E67500018CBAF /* ViewProfileViewController.h */,
+				80B0B9B81B3E67500018CBAF /* ViewProfileViewController.m */,
+				80B0B9AC1B3C4B270018CBAF /* EditProfileViewController.h */,
+				80B0B9AD1B3C4B270018CBAF /* EditProfileViewController.m */,
+			);
+			name = "Tab-Views";
+			sourceTree = "<group>";
+		};
 		80EE166D1B3BD9BD00FC983F = {
 			isa = PBXGroup;
 			children = (
@@ -145,23 +190,15 @@
 		80EE16781B3BD9BE00FC983F /* iOS-Course */ = {
 			isa = PBXGroup;
 			children = (
-				80EE16CC1B3C1BDC00FC983F /* Model */,
 				80EE167D1B3BD9BE00FC983F /* AppDelegate.h */,
 				80EE167E1B3BD9BE00FC983F /* AppDelegate.m */,
-				80EE16801B3BD9BE00FC983F /* LoginViewController.h */,
-				80EE16811B3BD9BE00FC983F /* LoginViewController.m */,
+				80EE16CC1B3C1BDC00FC983F /* Model */,
+				80B0B9B51B3E666E0018CBAF /* Account-Views */,
+				80B0B9B61B3E66C20018CBAF /* Tab-Views */,
 				80EE16861B3BD9BE00FC983F /* Images.xcassets */,
 				80EE16881B3BD9BE00FC983F /* LaunchScreen.xib */,
-				80EE16C11B3C0A8400FC983F /* Main.storyboard */,
+				80B0B9C21B3E6AC60018CBAF /* Main.storyboard */,
 				80EE16791B3BD9BE00FC983F /* Supporting Files */,
-				80EE16BE1B3BE23C00FC983F /* SignUpViewController.h */,
-				80EE16BF1B3BE23C00FC983F /* SignUpViewController.m */,
-				80EE16C61B3C166D00FC983F /* FeedTableViewController.h */,
-				80EE16C71B3C166D00FC983F /* FeedTableViewController.m */,
-				80EE16C91B3C1A7300FC983F /* ClassmatesTableViewController.h */,
-				80EE16CA1B3C1A7300FC983F /* ClassmatesTableViewController.m */,
-				80B0B9AC1B3C4B270018CBAF /* EditProfileViewController.h */,
-				80B0B9AD1B3C4B270018CBAF /* EditProfileViewController.m */,
 			);
 			path = "iOS-Course";
 			sourceTree = "<group>";
@@ -221,6 +258,10 @@
 				80EE16CE1B3C1C0D00FC983F /* User.m */,
 				80B0B9AF1B3C4D5C0018CBAF /* Users.h */,
 				80B0B9B01B3C4D5C0018CBAF /* Users.m */,
+				8059BD561B3EA19800A029D1 /* Feed.h */,
+				8059BD571B3EA19800A029D1 /* Feed.m */,
+				8059BD531B3E9BF000A029D1 /* FeedPost.h */,
+				8059BD541B3E9BF000A029D1 /* FeedPost.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -305,7 +346,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				80EE16C21B3C0A8400FC983F /* Main.storyboard in Resources */,
+				80B0B9C31B3E6AC60018CBAF /* Main.storyboard in Resources */,
 				80EE168A1B3BD9BE00FC983F /* LaunchScreen.xib in Resources */,
 				80EE16871B3BD9BE00FC983F /* Images.xcassets in Resources */,
 			);
@@ -326,10 +367,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				80B0B9B11B3C4D5C0018CBAF /* Users.m in Sources */,
+				80B0B9B91B3E67500018CBAF /* ViewProfileViewController.m in Sources */,
+				8059BD4F1B3E8F9300A029D1 /* CreatePostViewController.m in Sources */,
 				80EE16821B3BD9BE00FC983F /* LoginViewController.m in Sources */,
 				80EE16CF1B3C1C0D00FC983F /* User.m in Sources */,
+				8059BD551B3E9BF000A029D1 /* FeedPost.m in Sources */,
 				80EE167F1B3BD9BE00FC983F /* AppDelegate.m in Sources */,
 				80EE16C01B3BE23C00FC983F /* SignUpViewController.m in Sources */,
+				8059BD521B3E9B2400A029D1 /* ViewPostViewController.m in Sources */,
+				8059BD581B3EA19800A029D1 /* Feed.m in Sources */,
 				80B0B9AE1B3C4B270018CBAF /* EditProfileViewController.m in Sources */,
 				80EE16CB1B3C1A7300FC983F /* ClassmatesTableViewController.m in Sources */,
 				80EE167C1B3BD9BE00FC983F /* main.m in Sources */,

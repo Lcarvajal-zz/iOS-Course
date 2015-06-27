@@ -7,6 +7,7 @@
 //
 
 #import "ClassmatesTableViewController.h"
+#import "ViewProfileViewController.h"
 #import "User.h"
 #import "Users.h"
 #import <Parse/Parse.h>
@@ -20,9 +21,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    // fix navigation header
-    if ([self respondsToSelector:@selector(edgesForExtendedLayout)])
-        self.edgesForExtendedLayout = UIRectEdgeNone;
+    // hide navigation bar
+    self.navigationController.navigationBar.hidden = YES;
     
     if (!_users)
         _users = [[Users alloc] init];
@@ -89,8 +89,30 @@
     }   
 }
 
-- (void)tableView:(UITableView *)tableView didDeselectRowAtIndexPath:(NSIndexPath *)indexPath {
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    NSLog(@"pressed");
+    self.tableView.delegate = self;
+    self.tableView.dataSource = self;
     
+    // set user to be viewed
+    self.viewUser = [self.users getUser:(int)indexPath.row];
+    
+    // load user being viewed profile picture
+    [self.viewUser loadProfilePicture];
+    
+    [self performSegueWithIdentifier:@"viewProfileSegue" sender:self];
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if ([[segue identifier] isEqualToString:@"viewProfileSegue"]) {
+        
+        // Get destination view
+        ViewProfileViewController *vc = [segue destinationViewController];
+        
+        // send user being viewed
+        vc.viewUser = self.viewUser;
+    }
 }
 
 @end
