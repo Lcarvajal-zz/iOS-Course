@@ -10,8 +10,9 @@
 #import <Parse/Parse.h>
 #import "User.h"
 
-@interface EditProfileViewController : UIViewController
+@interface EditProfileViewController : UIViewController <UIImagePickerControllerDelegate, UINavigationControllerDelegate>
 
 @property User* currentUser;
+@property UIImage* imageToUpload;
 
 @end

@@ -9,8 +9,10 @@
 #import "User.h"
 #import <Parse/Parse.h>
 
+
 @implementation User
 
+@synthesize profilePic = _profilePic;
 @synthesize name = _name;
 @synthesize username = _username;
 @synthesize email = _email;
@@ -19,6 +21,18 @@
 @synthesize about = _about;
 
 - (void) setCurrentUser {
+    
+    PFFile *userImageFile = [[PFUser currentUser] objectForKey:@"profilePic"];
+    
+    [userImageFile getDataInBackgroundWithBlock:^(NSData *imageData, NSError *error) {
+        if (!error) {
+            self.profilePic = [UIImage imageWithData:imageData];
+        }
+        else {
+            NSLog(@"fiddlesticks");
+        }
+    }];
+    
     self.name = [[PFUser currentUser] objectForKey:@"Name"];
     self.username = [[PFUser currentUser] username];
     self.email = [[PFUser currentUser] email];

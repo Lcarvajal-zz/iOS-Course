@@ -10,7 +10,7 @@
 #import <Parse/Parse.h>
 #import "User.h"
 
-@interface EditProfileViewController ()
+@interface EditProfileViewController () <UIImagePickerControllerDelegate, UINavigationControllerDelegate>
 
 @property (weak, nonatomic) IBOutlet UIImageView *picIV;
 @property (weak, nonatomic) IBOutlet UITextField *nameTF;
@@ -37,6 +37,9 @@
     if (!_currentUser)
         _currentUser = [[User alloc] init];
     
+    if (!_imageToUpload)
+        _imageToUpload = [[UIImage alloc] init];
+    
     // load current user info
     [self loadProfile];
     
@@ -53,8 +56,18 @@
     
     // get current user info
     [self.currentUser setCurrentUser];
+
+    //  show current user info in edit profile window
+    PFFile *userImageFile = [[PFUser currentUser] objectForKey:@"profilePic"];
     
-    // set current user info in edit profile window
+    [userImageFile getDataInBackgroundWithBlock:^(NSData *imageData, NSError *error) {
+        if (!error) {
+            self.picIV.image = [UIImage imageWithData:imageData];
+        }
+        else {
+            NSLog(@"fiddlesticks");
+        }
+    }];
     self.nameTF.text = self.currentUser.name;
     self.usernameTF.text = self.currentUser.username;
     self.websiteTF.text = self.currentUser.website;
@@ -73,6 +86,22 @@
 */
 
 - (IBAction)uploadPhoto:(id)sender {
+    //Open a UIImagePickerController to select the picture
+    UIImagePickerController *imgPicker = [[UIImagePickerController alloc] init];
+    imgPicker.delegate = self;
+    imgPicker.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
+    
+    [self.navigationController presentViewController:imgPicker animated:YES completion:NULL];
+}
+
+- (void)imagePickerController:(UIImagePickerController *)picker
+        didFinishPickingImage:(UIImage *)img
+                  editingInfo:(NSDictionary *)editInfo {
+    
+    self.picIV.image = img;
+    self.imageToUpload = img;
+    
+    [picker dismissModalViewControllerAnimated:YES];
 }
 
 - (IBAction)saveProfile:(id)sender {
@@ -91,6 +120,11 @@
         cUser[@"website"] = newWebsite;
         cUser[@"hobbies"] = newHobbies;
         cUser[@"about"] = newAbout;
+        
+        NSData* data = UIImagePNGRepresentation(self.imageToUpload);
+        PFFile *imageFile = [PFFile fileWithName:@"image.png" data:data];
+        cUser[@"profilePic"] = imageFile;
+        
         [cUser saveInBackground];
     }
 }

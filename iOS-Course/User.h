@@ -11,9 +11,11 @@
  */
 
 #import <Foundation/Foundation.h>
+@import UIKit;
 
-@interface User : NSObject
+@interface User : NSObject 
 
+@property (nonatomic, copy) UIImage *profilePic;
 @property (nonatomic, copy) NSString* name;
 @property (nonatomic, copy) NSString* username;
 @property (nonatomic, copy) NSString* email;
