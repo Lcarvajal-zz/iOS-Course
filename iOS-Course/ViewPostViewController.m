@@ -10,28 +10,32 @@
 
 @interface ViewPostViewController ()
 
+@property (weak, nonatomic) IBOutlet UILabel *titleL;
+@property (weak, nonatomic) IBOutlet UILabel *authorL;
+
+@property (weak, nonatomic) IBOutlet UITextView *contentTV;
+
 @end
 
 @implementation ViewPostViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    
+    // show navigation bar with post title
+    self.navigationController.navigationBar.hidden = NO;
+    self.navigationController.title = self.feedPost.title;
+    
+    // show post on view
+    self.titleL.text = self.feedPost.title;
+    self.authorL.text = self.feedPost.author;
+    self.contentTV.text = self.feedPost.content;
+    
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end

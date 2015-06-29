@@ -25,23 +25,38 @@
 
 - (IBAction)revertProfile:(id)sender;
 
-- (IBAction)logOut:(id)sender;
+- (void)logOut;
 
 @end
 
 @implementation EditProfileViewController
 
-- (void)viewDidLoad {
-    [super viewDidLoad];
+-(void) viewWillAppear:(BOOL)animated {
     
     // hide navigation bar
-    self.navigationController.navigationBar.hidden = YES;
+    self.navigationController.navigationBar.hidden = NO;
+    self.tabBarController.navigationItem.hidesBackButton = YES;
+    self.tabBarController.navigationItem.title = @"My Profile";
+    
+    ;}
+
+- (void)viewDidLoad {
+    [super viewDidLoad];
     
     if (!_currentUser)
         _currentUser = [[User alloc] init];
     
     if (!_imageToUpload)
         _imageToUpload = [[UIImage alloc] init];
+    
+    
+    // add log out button
+    UIBarButtonItem *logOut = [[UIBarButtonItem alloc]
+                               initWithTitle:@"Log out"
+                               style:UIBarButtonItemStylePlain
+                               target:self
+                               action:@selector(logOut)];
+    self.tabBarController.navigationItem.rightBarButtonItem = logOut;
     
     // load current user info
     [self loadProfile];
@@ -71,10 +86,16 @@
             NSLog(@"profile photo not found!");
         }
     }];
+    
+    // check if string only contains white space
+    NSCharacterSet *set = [NSCharacterSet whitespaceCharacterSet];
+    
     self.nameTF.text = self.currentUser.name;
     self.usernameTF.text = self.currentUser.username;
-    self.websiteTF.text = self.currentUser.website;
-    self.hobbiesTF.text = self.currentUser.hobbies;
+    if([[self.currentUser.website stringByTrimmingCharactersInSet: set] length] != 0)
+        self.websiteTF.text = self.currentUser.website;
+    if([[self.currentUser.hobbies stringByTrimmingCharactersInSet: set] length] != 0)
+        self.hobbiesTF.text = self.currentUser.hobbies;
     self.aboutTV.text = self.currentUser.about;
 }
 
@@ -109,6 +130,7 @@
 
 - (IBAction)saveProfile:(id)sender {
     NSString* newName = self.nameTF.text;
+    newName = [newName capitalizedString];
     NSString* newWebsite = self.websiteTF.text;
     NSString* newHobbies = self.hobbiesTF.text;
     NSString* newAbout = self.aboutTV.text;
@@ -136,7 +158,7 @@
     [self loadProfile]; // reload profile from user
 }
 
-- (IBAction)logOut:(id)sender {
+- (void)logOut {
     [PFUser logOut];
     [self.navigationController popViewControllerAnimated:YES];
 }

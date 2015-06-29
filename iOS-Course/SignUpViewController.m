@@ -42,6 +42,7 @@
     NSString* name = [self.firstNameTF.text stringByAppendingString:@" "];
     name = [name stringByAppendingString:self.lastNameTF.text];
     name = [name lowercaseString];
+    name = [name capitalizedString];
     
     NSString* email = self.emailTF.text;
     email = [email lowercaseString];

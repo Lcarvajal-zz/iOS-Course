@@ -32,25 +32,19 @@
 
 - (void) loadProfilePicture {
 
-    PFQuery *query = [PFQuery queryWithClassName:@"Name"];
-    [query getObjectInBackgroundWithId:self.name
-                                 block:^(PFObject *user, NSError *error) {
-                                     {
-                                         // do your thing with text
-                                         if (!error) {
-                                             PFFile *userImageFile = [user objectForKey:@"profilePic"];
-                                             
-                                             [userImageFile getDataInBackgroundWithBlock:^(NSData *imageData, NSError *error) {
-                                                 if (!error) {
-                                                     self.profilePic = [UIImage imageWithData:imageData];
-                                                 }
-                                                 else {
-                                                     NSLog(@"profile photo not found!");
-                                                 }
-                                             }];
-                                         }
-                                     }
-                                 }];
+    PFQuery *query = [PFUser query];
+    [query whereKey:@"email" equalTo:self.email];
+    NSArray *array = [query findObjects];
+    PFFile *userImageFile = [[array objectAtIndex:0] objectForKey:@"profilePic"];
+    
+    [userImageFile getDataInBackgroundWithBlock:^(NSData *imageData, NSError *error) {
+        if (!error) {
+            self.profilePic = [UIImage imageWithData:imageData];
+        }
+        else {
+            NSLog(@"profile photo not found!");
+        }
+    }];
 }
 
 @end

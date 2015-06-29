@@ -154,10 +154,10 @@
 			children = (
 				80EE16C61B3C166D00FC983F /* FeedTableViewController.h */,
 				80EE16C71B3C166D00FC983F /* FeedTableViewController.m */,
-				8059BD4D1B3E8F9300A029D1 /* CreatePostViewController.h */,
-				8059BD4E1B3E8F9300A029D1 /* CreatePostViewController.m */,
 				8059BD501B3E9B2400A029D1 /* ViewPostViewController.h */,
 				8059BD511B3E9B2400A029D1 /* ViewPostViewController.m */,
+				8059BD4D1B3E8F9300A029D1 /* CreatePostViewController.h */,
+				8059BD4E1B3E8F9300A029D1 /* CreatePostViewController.m */,
 				80EE16C91B3C1A7300FC983F /* ClassmatesTableViewController.h */,
 				80EE16CA1B3C1A7300FC983F /* ClassmatesTableViewController.m */,
 				80B0B9B71B3E67500018CBAF /* ViewProfileViewController.h */,

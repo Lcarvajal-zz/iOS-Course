@@ -18,26 +18,45 @@
 
 @implementation FeedTableViewController
 
+- (void)viewWillAppear:(BOOL)animated {
+    if (!_feed) {
+        // pull all posts from feed
+        _feed = [[Feed alloc] init];
+    }
+    self.navigationController.navigationBar.hidden = YES;
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    // pull all posts from feed
-    _feed = [[Feed alloc] init];
-    
     // set garnet coller nav controller
-    self.navigationController.navigationBar.hidden = YES;
     [[UITabBar appearance] setTintColor:[UIColor colorWithRed: 100.0/255.0f green:32.0/255.0f blue:49.0/255.0f alpha:1.0]];
     
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
+    // remove extra separators from tableview
+    self.tableView.tableFooterView = [[UIView alloc] initWithFrame:CGRectZero];
+     
+    // Refresh on pull down
+    if(!self.refreshControl) {
+        self.refreshControl = [[UIRefreshControl alloc] init];
+        self.refreshControl.backgroundColor = [UIColor colorWithRed: 100.0/255.0f green:32.0/255.0f blue:49.0/255.0f alpha:1.0];
+        self.refreshControl.tintColor = [UIColor whiteColor];
+        [self.refreshControl addTarget:self
+                            action:@selector(getLatestPosts)
+                  forControlEvents:UIControlEventValueChanged];
+    }
     
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+//  GET LATEST POSTS
+
+- (void) getLatestPosts {
+    [self.tableView reloadData];            // reload table view
+    [self.refreshControl endRefreshing];    // end refresh on pull down
 }
 
 #pragma mark - Table view data source
@@ -64,13 +83,9 @@
     }
     
     // set info for posts
-    //FeedPost* feedPost = [self.feed getFeedPost:(int)indexPath.row];
-    
-    PFObject* object = [self.feed.feed objectAtIndex:(int)indexPath.row];
-    cell.textLabel.text = [object objectForKey:@"Title"];
-    
-    //cell.textLabel.text = feedPost.title;
-    //cell.detailTextLabel.text = feedPost.author;
+    FeedPost* feedPost = [self.feed getFeedPost:(int)indexPath.row];
+    cell.textLabel.text = feedPost.title;
+    cell.detailTextLabel.text = feedPost.author;
 
     
     return cell;
@@ -102,19 +117,25 @@
     // set post to be viewed
     self.feedPost =  [self.feed getFeedPost:(int)indexPath.row];
     
+    // remove cell selection
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    
     [self performSegueWithIdentifier:@"viewPostSegue" sender:self];
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
-    if ([[segue identifier] isEqualToString:@"viewProfileSegue"]) {
+    if ([[segue identifier] isEqualToString:@"viewPostSegue"]) {
         
         // Get destination view
         ViewPostViewController *vc = [segue destinationViewController];
         
         // send post being viewed
-        vc.feedPost = self.feedPost;
+        vc.feedPost = [[FeedPost alloc] initWithTitle:self.feedPost.title
+                                               author:self.feedPost.author
+                                              content:self.feedPost.content];
         
     }
 }
+
 @end

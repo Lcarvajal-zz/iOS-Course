@@ -23,6 +23,11 @@
 
 @implementation ViewProfileViewController
 
+- (void)viewWillAppear:(BOOL)animated {
+    //if (self.viewUser)
+        //[self.viewUser loadProfilePicture];
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     
@@ -39,6 +44,20 @@
 // LOAD USER PROFILE
 - (void) loadUserProfile {
     
+    PFQuery *query = [PFUser query];
+    [query whereKey:@"email" equalTo:self.viewUser.email];
+    NSArray *array = [query findObjects];
+    PFFile *userImageFile = [[array objectAtIndex:0] objectForKey:@"profilePic"];
+    
+    [userImageFile getDataInBackgroundWithBlock:^(NSData *imageData, NSError *error) {
+        if (!error) {
+            self.viewPicIV.image = [UIImage imageWithData:imageData];
+        }
+        else {
+            NSLog(@"profile photo not found!");
+        }
+    }];
+    
     self.viewPicIV.image = self.viewUser.profilePic;
     self.viewNameTF.text = self.viewUser.name;
     self.viewEmailTF.text = self.viewUser.username;
@@ -46,15 +65,5 @@
     self.viewHobbiesTF.text = self.viewUser.hobbies;
     self.viewAboutTF.text = self.viewUser.about;
 }
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end

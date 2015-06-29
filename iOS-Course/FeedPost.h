@@ -10,9 +10,9 @@
 
 @interface FeedPost : NSObject
 
-@property (nonatomic, copy) NSString* title;
-@property (nonatomic, copy) NSString* author;
-@property (nonatomic, copy) NSString* content;
+@property NSString* title;
+@property NSString* author;
+@property NSString* content;
 
 -(id)initWithTitle:(NSString*)title
             author:(NSString*)author

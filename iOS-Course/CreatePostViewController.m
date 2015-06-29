@@ -59,11 +59,14 @@
                                      author:self.currentUser.name
                                     content:self.postTextTV.text];
     
-    // save post with user string attached
+    // set post properties
     PFObject *post= [PFObject objectWithClassName:@"Post"];
     [post setObject:self.post.title forKey:@"Title"];
-    [post setObject:[PFUser currentUser] forKey:@"Author"];
-    [post setObject:[PFUser currentUser] forKey:@"Content"];
+    [post setObject:[[PFUser currentUser] objectForKey:@"Name"] forKey:@"Author"];
+    [post setObject:self.post.content forKey:@"Content"];
+    
+    // push to parse
+    [post saveInBackground];
     
     // go to previous view
     [self dismissViewControllerAnimated:YES completion:nil];

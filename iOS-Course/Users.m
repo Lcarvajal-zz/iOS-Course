@@ -26,6 +26,7 @@
     
     // perform query for classmates info
     PFQuery *query = [PFUser query];
+    [query addDescendingOrder:@"Name"];
     self.classmates = [query findObjects];
     
     for (int i = 0; i < self.classmates.count; i++) {
@@ -33,8 +34,9 @@
         // individual user info
         User* user = [[User alloc] init];
         user.name = [[self.classmates objectAtIndex:i] objectForKey:@"Name"];
-        user.email = [[self.classmates objectAtIndex:i] username];
+        user.username = [[self.classmates objectAtIndex:i] username];
         user.email = [[self.classmates objectAtIndex:i] email];
+        user.website = [[self.classmates objectAtIndex:i] objectForKey:@"website"];
         user.hobbies = [[self.classmates objectAtIndex:i] objectForKey:@"hobbies"];
         user.about = [[self.classmates objectAtIndex:i] objectForKey:@"about"];
         

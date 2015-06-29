@@ -18,22 +18,20 @@
 
 @implementation ClassmatesTableViewController
 
-- (void)viewDidLoad {
-    [super viewDidLoad];
+- (void)viewWillAppear:(BOOL)animated {
     
     // hide navigation bar
     self.navigationController.navigationBar.hidden = YES;
+}
+
+- (void)viewDidLoad {
+    [super viewDidLoad];
     
+    // remove extra separators from tableview
+    self.tableView.tableFooterView = [[UIView alloc] initWithFrame:CGRectZero];
+
     if (!_users)
         _users = [[Users alloc] init];
-    
-    
-    
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
-    
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
 }
 
 - (void)didReceiveMemoryWarning {
@@ -67,6 +65,7 @@
     // set names for classmates list
     User* classmate = [self.users getUser:(int)indexPath.row];
     cell.textLabel.text = classmate.name;
+    cell.detailTextLabel.text = classmate.email;
     
     return cell;
 }
@@ -99,6 +98,9 @@
     
     // load user being viewed profile picture
     [self.viewUser loadProfilePicture];
+    
+    // remove cell selection
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
     
     [self performSegueWithIdentifier:@"viewProfileSegue" sender:self];
 }

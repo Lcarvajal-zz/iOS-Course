@@ -10,20 +10,15 @@
 
 @implementation FeedPost
 
-@synthesize title = _title;
-@synthesize author = _author;
-@synthesize content = _content;
-
-
 -(id)initWithTitle:(NSString*)title
             author:(NSString*)author
-           content:(NSString*)content {
+           content:(NSString*)content{
     self = [super init];
     
     if(self) {
-        _title = title;
-        _author = author;
-        _content = content;
+        _title = [[NSString alloc] initWithString:title];
+        _author = [[NSString alloc] initWithString:author];
+        _content = [[NSString alloc] initWithString:content];
     }
     
     return self;
